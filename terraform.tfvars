@@ -19,7 +19,7 @@ management_gui_client_network               = "0.0.0.0/0"                       
 
 
 # --- Quick connect to Smart-1 Cloud ---
-smart_1_cloud_token                         = "PASTE TOKEN FROM SMART-1 CLOUD PORTAL"                                   # ""    
+smart_1_cloud_token                         = "set security-gateway cloud-mgmt-service on auth-token aHR0cHM6Ly9jbG91ZGluZnJhLWd3LmFwLnBvcnRhbC5jaGVja3BvaW50LmNvbS9hcHAvbWFhcy9hcGkvdjEvdGVuYW50L2E2MTI1MjQ1LTNkYjktNDNhMi05ZWEzLTQ2Y2IyYjdlYzE2Ny9hY2Nlc3Mta2V5cy8/b3RwPWVkOTMzMzRlLWFmMDktNDE5OC05ZWY5LTFlZWFhZGFjNjIxMQ=="                                   # ""    
 
 # --- Networking---
 region = "us-central1"
