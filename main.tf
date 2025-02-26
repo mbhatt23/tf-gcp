@@ -123,11 +123,11 @@ module "internal_network5_and_subnet" {
   count = var.num_additional_networks < 5 ? 0 : 1
   source = "./common/network-and-subnet"
 
-  prefix = "${var.prefix}-${random_string.random_string.result}"
+  //prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network5"
   network_cidr = var.internal_network5_cidr
   private_ip_google_access = false
-  region = var.region
+ region = var.region
   network_name = var.internal_network5_name
 }
 module "internal_network6_and_subnet" {
