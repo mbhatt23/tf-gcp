@@ -10,7 +10,7 @@ resource "random_string" "random_string" {
   keepers = {}
 }
 module "common" {
-  source = "../common/common"
+  source = "./common/common"
   installation_type = var.installation_type
   os_version = var.os_version
   image_name = var.image_name
@@ -20,7 +20,7 @@ module "common" {
 }
 
 module "network_and_subnet" {
-    source = "../common/network-and-subnet"
+    source = "./common/network-and-subnet"
     prefix = "${var.prefix}-${random_string.random_string.result}"
     type = replace(lower(var.installation_type), " ", "-")
     network_cidr = var.network_cidr
@@ -31,7 +31,7 @@ module "network_and_subnet" {
 }
 module "network_ICMP_firewall_rules" {
   count = local.ICMP_traffic_condition
-  source = "../common/firewall-rule"
+  source = "./common/firewall-rule"
   protocol = "icmp"
   source_ranges = var.ICMP_traffic
   rule_name = "${var.prefix}-${replace(replace(replace(lower(var.installation_type), "(", ""), ")", ""), " ", "-")}-icmp-${random_string.random_string.result}"
@@ -40,7 +40,7 @@ module "network_ICMP_firewall_rules" {
 }
 module "network_TCP_firewall_rules" {
   count = local.TCP_traffic_condition
-  source = "../common/firewall-rule"
+  source = "./common/firewall-rule"
   protocol = "tcp"
   source_ranges = var.TCP_traffic
   rule_name = "${var.prefix}-${replace(replace(replace(lower(var.installation_type), "(", ""), ")", ""), " ", "-")}-tcp-${random_string.random_string.result}"
@@ -49,7 +49,7 @@ module "network_TCP_firewall_rules" {
 }
 module "network_UDP_firewall_rules" {
   count = local.UDP_traffic_condition
-  source = "../common/firewall-rule"
+  source = "./common/firewall-rule"
   protocol = "udp"
   source_ranges = var.UDP_traffic
   rule_name = "${var.prefix}-${replace(replace(replace(lower(var.installation_type), "(", ""), ")", ""), " ", "-")}-udp-${random_string.random_string.result}"
@@ -58,7 +58,7 @@ module "network_UDP_firewall_rules" {
 }
 module "network_SCTP_firewall_rules" {
   count = local.SCTP_traffic_condition
-  source = "../common/firewall-rule"
+  source = "./common/firewall-rule"
   protocol = "sctp"
   source_ranges = var.SCTP_traffic
   rule_name = "${var.prefix}-${replace(replace(replace(lower(var.installation_type), "(", ""), ")", ""), " ", "-")}-sctp-${random_string.random_string.result}"
@@ -67,7 +67,7 @@ module "network_SCTP_firewall_rules" {
 }
 module "network_ESP_firewall_rules" {
   count = local.ESP_traffic_condition 
-  source = "../common/firewall-rule"
+  source = "./common/firewall-rule"
   protocol = "esp"
   source_ranges = var.ESP_traffic
   rule_name = "${var.prefix}-${replace(replace(replace(lower(var.installation_type), "(", ""), ")", ""), " ", "-")}-esp-${random_string.random_string.result}"
@@ -77,7 +77,7 @@ module "network_ESP_firewall_rules" {
 
 module "internal_network1_and_subnet" {
   count = local.create_internal_network1_condition ? 1 : 0
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network1"
@@ -88,7 +88,7 @@ module "internal_network1_and_subnet" {
 }
 module "internal_network2_and_subnet" {
   count = local.create_internal_network2_condition ? 1 : 0
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network2"
@@ -99,7 +99,7 @@ module "internal_network2_and_subnet" {
 }
 module "internal_network3_and_subnet" {
   count = var.num_additional_networks < 3 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network3"
@@ -110,7 +110,7 @@ module "internal_network3_and_subnet" {
 }
 module "internal_network4_and_subnet" {
   count = var.num_additional_networks < 4 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network4"
@@ -121,7 +121,7 @@ module "internal_network4_and_subnet" {
 }
 module "internal_network5_and_subnet" {
   count = var.num_additional_networks < 5 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network5"
@@ -132,7 +132,7 @@ module "internal_network5_and_subnet" {
 }
 module "internal_network6_and_subnet" {
   count = var.num_additional_networks < 6 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network6"
@@ -143,7 +143,7 @@ module "internal_network6_and_subnet" {
 }
 module "internal_network7_and_subnet" {
   count = var.num_additional_networks < 7 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network7"
@@ -154,7 +154,7 @@ module "internal_network7_and_subnet" {
 }
 module "internal_network8_and_subnet" {
   count = var.num_additional_networks < 8 ? 0 : 1
-  source = "../common/network-and-subnet"
+  source = "./common/network-and-subnet"
 
   prefix = "${var.prefix}-${random_string.random_string.result}"
   type = "internal-network8"
@@ -164,7 +164,7 @@ module "internal_network8_and_subnet" {
   network_name = var.internal_network8_name
 }
 module "single" {
-  source = "../common/single-common"
+  source = "./common/single-common"
   project              = var.project
 
   # Check Point Deployment
