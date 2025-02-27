@@ -1,6 +1,6 @@
 # --- Google Provider ---
 service_account_path                        = ""                                       # "service-accounts/service-account-file-name.json"
-project                                     = ""                                                 # "project-id"  
+project                                     = "tfgcp-respiro"                                                 # "project-id"  
 
 # --- Check Point Deployment---
 image_name = "check-point-r8120-gw-byol-single-631-991001669-v20240923"
