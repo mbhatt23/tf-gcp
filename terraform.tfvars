@@ -34,8 +34,8 @@ SCTP_traffic = []
 ESP_traffic = []
 num_additional_networks = 1
 external_ip = "static"
-internal_network1_name = ""
-internal_network1_subnetwork_name = ""
+internal_network1_name = "int-network"
+internal_network1_subnetwork_name = "int-subnet"
 internal_network1_cidr = "10.0.1.0/24"
 # --- Instances configuration---
 machine_type = "n1-standard-4"
