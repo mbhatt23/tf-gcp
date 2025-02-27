@@ -4,7 +4,7 @@ project                                     = "tfgcp-respiro"                   
 GOOGLE_CREDENTIALS = "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-PfK4YjHwb8vMhj2o/terraform.tfvars"
 # --- Check Point Deployment---
 image_name = "check-point-r8120-gw-byol-single-631-991001669-v20240923"
-os_version = "R82"
+os_version = "R8200"
 installation_type = "Gateway only"
 license = "BYOL"
 prefix = "chkp-single-tf-"
