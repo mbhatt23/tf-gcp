@@ -1,8 +1,8 @@
-//provider "google" {
-  //credentials = file(var.service_account_path)
-  //project     = var.project
-  //region      = var.region
-//}
+provider "google" {
+  credentials = file(var.service_account_path)
+  project     = var.project
+  region      = var.region
+}
 resource "random_string" "random_string" {
   length  = 6
   special = false
