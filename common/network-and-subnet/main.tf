@@ -2,7 +2,7 @@ locals {
   create_network_condition = var.network_cidr == "" ? false : true
 }
 
-resource "google_compute_network" "vpc_network" {
+resource "google_compute_network" "network" {
   count = local.create_network_condition ? 1 : 0
   name = "${replace(var.prefix, "--", "-")}-${replace(replace(var.type, "(", ""), ")", "")}"
   auto_create_subnetworks = false
