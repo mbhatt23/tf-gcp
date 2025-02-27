@@ -3,9 +3,9 @@ locals {
 }
 
 resource "google_compute_network" "network" {
-  count = local.create_network_condition ? 1 : 0
+  count = 2
   name = "${replace(var.prefix, "--", "-")}-${replace(replace(var.type, "(", ""), ")", "")}"
-  auto_create_subnetworks = false
+  auto_create_subnetworks = true
 }
 resource "google_compute_subnetwork" "subnetwork" {
   count = local.create_network_condition ? 1 : 0
