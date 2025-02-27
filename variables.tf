@@ -1,7 +1,7 @@
 variable "GOOGLE_CREDENTIALS" {
   type = string
   description = "Key value of service account"
-default = ""
+  default = ""
 }
 variable "service_account_path" {
   type = string
