@@ -40,5 +40,5 @@ internal_network1_cidr = "10.0.1.0/24"
 # --- Instances configuration---
 machine_type = "n1-standard-4"
 disk_type = "SSD Persistent Disk"
-disk_size = 100
-enable_monitoring = false
+disk_size = 110
+enable_monitoring = true
