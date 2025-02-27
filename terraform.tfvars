@@ -24,8 +24,8 @@ smart_1_cloud_token                         = "set security-gateway cloud-mgmt-s
 # --- Networking---
 region = "us-central1"
 zone = "us-central1-a"
-network_name = ""
-subnetwork_name = ""
+network_name = "mynetwork"
+subnetwork_name = "mysubnet"
 network_cidr = "10.0.0.0/24"
 TCP_traffic = ["0.0.0.0/0"]
 ICMP_traffic  = []
