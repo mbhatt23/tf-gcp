@@ -1,7 +1,7 @@
 # --- Google Provider ---
 service_account_path                        = ""                                       # "service-accounts/service-account-file-name.json"
 project                                     = "tfgcp-respiro"                                                 # "project-id"  
-GOOGLE_CREDENTIALS = ""
+GOOGLE_CREDENTIALS = "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-PfK4YjHwb8vMhj2o/terraform.tfvars"
 # --- Check Point Deployment---
 image_name = "check-point-r8120-gw-byol-single-631-991001669-v20240923"
 os_version = "R8120"
