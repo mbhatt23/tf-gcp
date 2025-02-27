@@ -165,7 +165,7 @@ module "internal_network8_and_subnet" {
 }
 module "single" {
   source = "./common/single-common"
-  project              = var.project
+  project= var.project
 
   # Check Point Deployment
   image_name                       = var.image_name
